@@ -131,7 +131,7 @@ def get_trainer():
     early_stop_callback = EarlyStopping(monitor="validation_loss", min_delta=0.00, patience=6, verbose=False, mode="max")
     return pl.Trainer(
         accelerator="auto", 
-        auto_select_gpus=True, 
+        # auto_select_gpus=True, 
         logger=loggerT,# enable_checkpointing=False,
         max_epochs=epochs,
         callbacks=[early_stop_callback],
